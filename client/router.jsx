@@ -20,6 +20,7 @@ FlowRouter.notFound = {
 
 FlowRouter.route("/", {
 	action: function() {
+		console.log('hisdas');
 		ReactLayout.render(AppLayout, {
 			content: <HomePage />
 		});

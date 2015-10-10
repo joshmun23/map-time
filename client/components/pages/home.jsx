@@ -3,8 +3,13 @@ HomePage = React.createClass({
     render:function(){
     	console.log('adsad');
     	return(
-    		<div>
-                Default page :)
+    		<div className="main home">
+    			<div className="hero">
+	                <MainHeader />
+	                <div className="title">
+	                	Manage Drivers and Pick Ups
+	                </div>
+    			</div>
     		</div>
     	);
     }
