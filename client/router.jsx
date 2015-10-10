@@ -20,31 +20,29 @@ FlowRouter.notFound = {
 
 FlowRouter.route("/", {
 	action: function() {
-		FlowRouter.go("/people");
-		return;
-		ReactLayout.render(MainLayout, {
-			content: <Default />
+		ReactLayout.render(AppLayout, {
+			content: <HomePage />
 		});
 	}
 });
 
 FlowRouter.route("/signin", {
 	action: function() {
-		ReactLayout.render(MainLayout, {
+		ReactLayout.render(AppLayout, {
 			content: <AuthSignInPage />
 		});
 	}
 });
 
 
-function checkLogin(context) {
-	// console.log(context);
-	if(!Meteor.userId()){
-		FlowRouter.go("/signin");
-	}
-}
+// function checkLogin(context) {
+// 	// console.log(context);
+// 	if(!Meteor.userId()){
+// 		FlowRouter.go("/signin");
+// 	}
+// }
 
-FlowRouter.triggers.enter([checkLogin],{except: ["signin"]});
+// FlowRouter.triggers.enter([checkLogin],{except: ["signin"]});
 
 
 
