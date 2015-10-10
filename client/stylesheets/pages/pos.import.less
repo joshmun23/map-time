@@ -1,0 +1,145 @@
+.point-of-sales {
+	height:100%;
+	& .receipt-container {
+		position: absolute;
+		top:0;
+		right:0;
+		width:300px;
+		height: 100%;
+		padding: 0 0;
+		z-index:9;
+		// background:rgba(0,240,0,0.05);
+		& .receipt {
+			position: relative;
+			width:100%;
+			height:100%;
+			@receipt-padding: 110px;
+			& .receipt-body {
+				padding:10px 10px 0;
+				width:100%;
+				height:100%;
+				padding-bottom: @receipt-padding;
+				background:#FFF;
+				overflow: auto;
+				& .receipt-header {
+					.text-center;
+					& .top {
+						.font-semi;
+						font-size:14px;
+					}
+					& .addr, .phone{font-size:12px;}
+					padding-bottom: 10px;
+					border-bottom:2px solid #CCC;
+				}
+			}
+			& .receipt-footer {
+				width:100%;
+				height:@receipt-padding;
+				position: absolute;
+				padding:10px;
+				left:0;
+				bottom:0;
+				background:#FFF;
+				& .line-row {
+					display: block;
+					float:left;
+					width:100%;
+				    border-bottom: 1px dotted #CCC;
+				    line-height: 0;
+				    margin-bottom: 15px;
+				    font-size: 12px;
+					& .left {
+					    float: left;
+					    background: #FFF;
+					    padding: 5px 10px 5px 0;
+					    margin:0 0 -1px 0
+					}
+					& .right {
+						float:right;
+						background: #FFF;
+					    padding: 5px 0px 5px 10px;
+					    margin: 0 0 -1px 0
+					}
+				}
+			}
+		}
+		& .receipt-item {
+			float:left;
+			width:100%;
+			padding:5px 0;
+			border-bottom:1px solid fade(#000,20%);
+			& img {
+				float:left;
+				width:80px;
+				height:80px;
+				object-fit:cover;
+				.border-radius;
+				margin-right:5px;
+			}
+			& .text {
+				padding-top:10px;
+				& .title {
+					font-size:16px;
+					.font-bold;
+				}
+				& .qty {
+					font-size:12px;
+					color:fade(#000,50%);
+				}
+				& .price {
+					font-size:12px;
+					color:fade(#000,50%);
+				}
+			}
+		}
+	}
+	& .slide {height:100%;}
+	& .slide-1 {
+		& .product-container {
+			width:100%;
+			height:100%;
+			// background:rgba(250,0,0,0.2);
+			padding-right:300px;
+			& .top-bar {
+				width:100%;
+				height:55px;
+				background:fade(#3D4349,40%);
+				padding: 10px 20px;
+				.border-radius;
+			}
+			& .product-content {
+				width:100%;
+				height:100%;
+				background:#FFF;
+				.border-radius;
+				padding:20px;
+				& .list-product {
+					float:left;
+					display: inline-block;
+					width:32.3333333%;
+					margin:0 1% 1% 0;
+					background:#E9EBEB;
+					.border-radius;
+					padding:5px;
+					& img {
+						float:left;
+						width:70px;
+						height:70px;
+						object-fit:cover;
+						.border-radius;
+						margin-right:10px;
+					}
+					& .text {
+						.font-bold;
+						font-size:12px;
+						padding-top:10px;
+					}
+				}
+			}
+		}
+	}
+	& .slide-2 {
+		position: fixed;
+		display: none;
+	}
+}
