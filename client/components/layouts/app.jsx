@@ -17,31 +17,6 @@ AppLayout = React.createClass({
 			navActive: false
 	    };
 	},
-	// childContextTypes: {
-	//     toggleNav: React.PropTypes.func.isRequired
-	// },
-	// getChildContext() {
-	//     return {
-	// 		toggleNav: this.toggleNav
-	// 	}
-	// },
-	getMeteorData() {
-
-		// const subHandles = [
-		// 	Meteor.subscribe("")
-		// ];
-
-		// const subsReady = _.all(subHandles, function (handle) {
-		// 	return handle.ready();
-		// });
-
-		return {
-			// subsReady: subsReady,
-			subsReady: true,
-			currentUser: Meteor.user(),
-			disconnected: ShowConnectionIssues.get() && (! Meteor.status().connected)
-		};
-	},
 	toggleNav() {
 	    this.setState({
 	      navActive: ! this.state.navActive
@@ -64,9 +39,6 @@ AppLayout = React.createClass({
 				"inside" : !this.props.content.props.name,
 			}),
 		}
-
-		var pageTitle = this.props.content.props.name ? this.props.content.props.name : <PageBack />;
-		var pageTitle;
 
 		if(!this.data.subsReady){
 			return(<Loading/>);
